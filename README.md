@@ -176,56 +176,9 @@ goose postgres "postgres://username:password@localhost:5432/gator" up
 goose postgres "postgres://username:password@localhost:5432/gator" down
 ```
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## Troubleshooting
-
-### Common Issues
-
-**"No feeds to fetch"**
-- Make sure you've added some feeds with `gator addfeed`
-- Check that the aggregator is running
-
-**"Current user not found"**
-- Make sure you're logged in with `gator login <username>`
-- Verify the user exists with `gator users`
-
-**Database connection errors**
-- Check your PostgreSQL connection string in `~/.gatorconfig.json`
-- Ensure PostgreSQL is running
-- Verify the database exists
-
-**RSS feed errors**
-- Some feeds may be temporarily unavailable
-- Check the feed URL is correct
-- The aggregator will retry on the next cycle
-
-### Getting Help
-
-If you encounter issues:
-
-1. Check the error messages - they're designed to be helpful
-2. Verify your configuration file
-3. Ensure PostgreSQL is running
-4. Check that you're logged in as a valid user
-
 ## Performance Notes
 
 - The aggregator respects rate limits to avoid overwhelming servers
 - Duplicate posts are automatically ignored
 - The system is designed to handle large numbers of feeds and posts efficiently
 - Use appropriate intervals for the aggregator (not too frequent)
-
----
-
-Built with ❤️ using Go, PostgreSQL, and SQLC.
